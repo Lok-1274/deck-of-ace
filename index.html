@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deck of Ace's - Trusted Financial & Legal Professionals</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://placehold.co/1920x1080/a0aec0/ffffff?text=Cityscape');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Add styles for the modal */
+        .modal-overlay {
+            transition: opacity 0.3s ease;
+        }
+        .modal-container {
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800">
+
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-gray-900">
+                <i class="fas fa-user-tie mr-2 text-blue-600"></i>Deck of Ace's
+            </a>
+            <div class="hidden md:flex items-center space-x-6">
+                <a href="#features" class="text-gray-600 hover:text-blue-600 transition duration-300">For Clients</a>
+                <a href="#professionals" class="text-gray-600 hover:text-blue-600 transition duration-300">For Professionals</a>
+                <a href="#how-it-works" class="text-gray-600 hover:text-blue-600 transition duration-300">How It Works</a>
+                <!-- Auth state will be managed here -->
+                <div id="auth-container-desktop">
+                     <a href="#" id="signInBtnDesktop" class="bg-blue-600 text-white px-4 py-2 rounded-full hover:bg-blue-700 transition duration-300">Sign In</a>
+                </div>
+                <div id="user-info-desktop" class="hidden items-center space-x-4">
+                    <span id="user-email-desktop" class="text-sm text-gray-600"></span>
+                    <a href="#" id="signOutBtnDesktop" class="bg-red-500 text-white px-4 py-2 rounded-full hover:bg-red-600 transition duration-300">Sign Out</a>
+                </div>
+            </div>
+            <button class="md:hidden flex items-center" id="mobile-menu-button">
+                <i class="fas fa-bars text-gray-600 text-2xl"></i>
+            </button>
+        </nav>
+        <!-- Mobile Menu -->
+        <div class="md:hidden hidden" id="mobile-menu">
+            <a href="#features" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">For Clients</a>
+            <a href="#professionals" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">For Professionals</a>
+            <a href="#how-it-works" class="block py-2 px-4 text-sm text-gray-600 hover:bg-gray-100">How It Works</a>
+            <!-- Auth state for mobile -->
+             <div id="auth-container-mobile" class="p-2">
+                <a href="#" id="signInBtnMobile" class="block w-full text-center bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition duration-300">Sign In</a>
+            </div>
+            <div id="user-info-mobile" class="hidden p-2">
+                <span id="user-email-mobile" class="block text-center text-sm text-gray-600 mb-2"></span>
+                <a href="#" id="signOutBtnMobile" class="block w-full text-center bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition duration-300">Sign Out</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content (Sections remain the same) -->
+    <!-- Hero Section -->
+    <section class="hero-bg text-white">
+        <div class="container mx-auto px-6 py-24 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-4">Find Your Trusted Expert</h1>
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">A streamlined platform connecting you with verified financial and legal professionals. Simplify your search, consultations, and record-keeping.</p>
+            <div class="flex justify-center space-x-4">
+                <a href="#" class="bg-blue-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-blue-700 transition duration-300 text-lg">Find a Professional</a>
+                <a href="#" class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition duration-300 text-lg">Join as a Professional</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features for Clients -->
+    <section id="features" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-2">Your Search for Expertise Ends Here</h2>
+            <p class="text-center text-gray-600 mb-12">We make finding the right professional simple, secure, and transparent.</p>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-filter text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Smart Filters</h3>
+                    <p class="text-gray-600">Quickly find the right expert based on specialty, location, experience, and client ratings.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-check-circle text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Verified Profiles</h3>
+                    <p class="text-gray-600">Every professional on our platform is thoroughly vetted for their credentials and experience.</p>
+                </div>
+                <div class="bg-white p-8 rounded-lg shadow-md text-center">
+                    <div class="bg-blue-100 text-blue-600 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-folder-open text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Streamlined Records</h3>
+                    <p class="text-gray-600">Keep track of your consultations, documents, and communication all in one secure place.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- For Professionals Section -->
+    <section id="professionals" class="bg-gray-100 py-20">
+        <div class="container mx-auto px-6">
+             <h2 class="text-3xl font-bold text-center mb-2">Grow Your Practice With Us</h2>
+            <p class="text-center text-gray-600 mb-12">Connect with clients, network with peers, and build your professional brand.</p>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <img src="https://placehold.co/600x400/e2e8f0/4a5568?text=Professional+Networking" alt="Professionals collaborating" class="rounded-lg shadow-lg">
+                </div>
+                <div>
+                    <ul class="space-y-6">
+                        <li class="flex items-start">
+                            <i class="fas fa-users text-blue-600 text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Connect with New Clients</h4>
+                                <p class="text-gray-600">Expand your reach to individuals and businesses actively seeking your expertise.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-comments text-blue-600 text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Peer-to-Peer Socializing</h4>
+                                <p class="text-gray-600">Engage in a community of fellow financial and legal experts to share insights and opportunities.</p>
+                            </div>
+                        </li>
+                        <li class="flex items-start">
+                             <i class="fas fa-chart-line text-blue-600 text-2xl mr-4 mt-1"></i>
+                            <div>
+                                <h4 class="font-bold text-lg">Build Your Reputation</h4>
+                                <p class="text-gray-600">Showcase your skills, gather client reviews, and establish yourself as a leader in your field.</p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="how-it-works" class="py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">Get Started in 3 Simple Steps</h2>
+            <div class="relative">
+                <div class="hidden md:block absolute top-1/2 left-0 w-full h-0.5 bg-gray-300" style="transform: translateY(-50%);"></div>
+                <div class="grid md:grid-cols-3 gap-12 relative">
+                    <div class="text-center">
+                        <div class="bg-white border-2 border-blue-600 text-blue-600 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4 text-3xl font-bold shadow-lg">1</div>
+                        <h3 class="text-xl font-bold mb-2">Search & Filter</h3>
+                        <p class="text-gray-600">Use our intuitive search to find professionals that match your specific needs.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white border-2 border-blue-600 text-blue-600 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4 text-3xl font-bold shadow-lg">2</div>
+                        <h3 class="text-xl font-bold mb-2">Review & Connect</h3>
+                        <p class="text-gray-600">Browse verified profiles, read reviews, and schedule an initial consultation.</p>
+                    </div>
+                    <div class="text-center">
+                        <div class="bg-white border-2 border-blue-600 text-blue-600 rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-4 text-3xl font-bold shadow-lg">3</div>
+                        <h3 class="text-xl font-bold mb-2">Collaborate Securely</h3>
+                        <p class="text-gray-600">Manage your engagement, from communication to document sharing, on one platform.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Testimonials -->
+    <section class="bg-blue-600 text-white py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-12">What Our Users Are Saying</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-blue-700 p-8 rounded-lg">
+                    <p class="mb-4">"Moving to a new city was daunting. Deck of Ace's helped me find a trustworthy financial advisor in just a few clicks. The verification process gave me complete peace of mind."</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/50x50/ffffff/3182ce?text=JS" alt="User" class="rounded-full mr-4">
+                        <div>
+                            <p class="font-bold">Jane S.</p>
+                            <p class="text-sm text-blue-200">New Resident</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-blue-700 p-8 rounded-lg">
+                    <p class="mb-4">"As a lawyer, this platform has been invaluable. It handles the initial client screening and paperwork, letting me focus on what I do best. The networking aspect is a great bonus."</p>
+                    <div class="flex items-center">
+                        <img src="https://placehold.co/50x50/ffffff/3182ce?text=MD" alt="User" class="rounded-full mr-4">
+                        <div>
+                            <p class="font-bold">Michael D.</p>
+                            <p class="text-sm text-blue-200">Legal Counsel</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6 text-center">
+            <a href="#" class="text-xl font-bold">
+                <i class="fas fa-user-tie mr-2"></i>Deck of Ace's
+            </a>
+            <p class="my-4 text-gray-400">Your trusted partner in professional services.</p>
+            <div class="flex justify-center space-x-6">
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-twitter text-xl"></i></a>
+                <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-linkedin-in text-xl"></i></a>
+            </div>
+            <p class="mt-8 text-sm text-gray-500">&copy; 2024 Deck of Ace's. All rights reserved.</p>
+        </div>
+    </footer>
+    
+    <!-- Auth Modal -->
+    <div id="authModal" class="modal-overlay fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 hidden">
+        <div class="modal-container bg-white w-full max-w-md p-8 rounded-lg shadow-xl relative transform scale-95">
+            <button id="closeModalBtn" class="absolute top-4 right-4 text-gray-500 hover:text-gray-800">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
+            
+            <!-- Sign In Form -->
+            <div id="signInForm">
+                <h2 class="text-2xl font-bold mb-6 text-center">Sign In</h2>
+                <form>
+                    <div class="mb-4">
+                        <label for="signInEmail" class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" id="signInEmail" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="signInPassword" class="block text-gray-700 mb-2">Password</label>
+                        <input type="password" id="signInPassword" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <button type="submit" id="signInSubmitBtn" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300">Sign In</button>
+                    <p id="signInError" class="text-red-500 text-sm mt-4 text-center"></p>
+                </form>
+                <p class="text-center mt-6">
+                    Don't have an account? <a href="#" id="showSignUp" class="text-blue-600 hover:underline">Sign Up</a>
+                </p>
+            </div>
+
+            <!-- Sign Up Form -->
+            <div id="signUpForm" class="hidden">
+                <h2 class="text-2xl font-bold mb-6 text-center">Create Account</h2>
+                <form>
+                    <div class="mb-4">
+                        <label for="signUpEmail" class="block text-gray-700 mb-2">Email</label>
+                        <input type="email" id="signUpEmail" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="signUpPassword" class="block text-gray-700 mb-2">Password</label>
+                        <input type="password" id="signUpPassword" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                     <div class="mb-6">
+                        <label for="userType" class="block text-gray-700 mb-2">I am a:</label>
+                        <select id="userType" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500">
+                            <option value="client">Client seeking a professional</option>
+                            <option value="professional">Professional looking for clients</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="signUpSubmitBtn" class="w-full bg-blue-600 text-white py-2 rounded-lg hover:bg-blue-700 transition duration-300">Sign Up</button>
+                    <p id="signUpError" class="text-red-500 text-sm mt-4 text-center"></p>
+                </form>
+                <p class="text-center mt-6">
+                    Already have an account? <a href="#" id="showSignIn" class="text-blue-600 hover:underline">Sign In</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // --- Basic UI Interactivity ---
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                // Check if the href is more than just a '#' to avoid errors
+                // and to not interfere with links used as buttons.
+                if (href.length > 1) {
+                    const targetElement = document.querySelector(href);
+                    if (targetElement) {
+                        e.preventDefault();
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+    </script>
+    
+    <!-- Firebase SDK and Logic -->
+    <script type="module">
+        // Import Firebase modules
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-app.js";
+        import { 
+            getAuth, 
+            onAuthStateChanged,
+            createUserWithEmailAndPassword,
+            signInWithEmailAndPassword,
+            signOut,
+            signInAnonymously,
+            signInWithCustomToken
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-auth.js";
+        import { 
+            getFirestore, 
+            doc, 
+            setDoc
+        } from "https://www.gstatic.com/firebasejs/11.6.1/firebase-firestore.js";
+
+        // --- Firebase Configuration ---
+        // These variables are provided by the environment.
+        const firebaseConfig = typeof __firebase_config !== 'undefined' 
+            ? JSON.parse(__firebase_config)
+            : { apiKey: "YOUR_API_KEY", authDomain: "YOUR_AUTH_DOMAIN", projectId: "YOUR_PROJECT_ID" }; // Fallback for local dev
+
+        const appId = typeof __app_id !== 'undefined' ? __app_id : 'default-app-id';
+
+        // --- Initialize Firebase ---
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+        const db = getFirestore(app);
+
+        // --- DOM Elements ---
+        const authModal = document.getElementById('authModal');
+        const modalContainer = document.querySelector('.modal-container');
+        const closeModalBtn = document.getElementById('closeModalBtn');
+        const signInBtnDesktop = document.getElementById('signInBtnDesktop');
+        const signInBtnMobile = document.getElementById('signInBtnMobile');
+        
+        const authContainerDesktop = document.getElementById('auth-container-desktop');
+        const userInfoDesktop = document.getElementById('user-info-desktop');
+        const userEmailDesktop = document.getElementById('user-email-desktop');
+        const signOutBtnDesktop = document.getElementById('signOutBtnDesktop');
+        
+        const authContainerMobile = document.getElementById('auth-container-mobile');
+        const userInfoMobile = document.getElementById('user-info-mobile');
+        const userEmailMobile = document.getElementById('user-email-mobile');
+        const signOutBtnMobile = document.getElementById('signOutBtnMobile');
+
+        const signInForm = document.getElementById('signInForm');
+        const signUpForm = document.getElementById('signUpForm');
+        const showSignUpLinks = document.querySelectorAll('#showSignUp');
+        const showSignInLinks = document.querySelectorAll('#showSignIn');
+
+        // --- Modal Logic ---
+        const openModal = () => {
+            authModal.classList.remove('hidden');
+            setTimeout(() => {
+                authModal.classList.remove('opacity-0');
+                modalContainer.classList.remove('scale-95');
+                authModal.classList.add('opacity-100');
+                modalContainer.classList.add('scale-100');
+            }, 10);
+        };
+
+        const closeModal = () => {
+            authModal.classList.remove('opacity-100');
+            modalContainer.classList.remove('scale-100');
+            authModal.classList.add('opacity-0');
+            modalContainer.classList.add('scale-95');
+            setTimeout(() => {
+                authModal.classList.add('hidden');
+                // Reset forms
+                signInForm.querySelector('form').reset();
+                signUpForm.querySelector('form').reset();
+                document.getElementById('signInError').textContent = '';
+                document.getElementById('signUpError').textContent = '';
+            }, 300);
+        };
+
+        signInBtnDesktop.addEventListener('click', openModal);
+        signInBtnMobile.addEventListener('click', openModal);
+        closeModalBtn.addEventListener('click', closeModal);
+        authModal.addEventListener('click', (e) => {
+            if (e.target === authModal) {
+                closeModal();
+            }
+        });
+
+        showSignUpLinks.forEach(link => link.addEventListener('click', (e) => {
+            e.preventDefault();
+            signInForm.classList.add('hidden');
+            signUpForm.classList.remove('hidden');
+        }));
+
+        showSignInLinks.forEach(link => link.addEventListener('click', (e) => {
+            e.preventDefault();
+            signUpForm.classList.add('hidden');
+            signInForm.classList.remove('hidden');
+        }));
+
+        // --- Firebase Authentication Logic ---
+
+        // Handle Sign Up
+        const signUpSubmitBtn = document.getElementById('signUpSubmitBtn');
+        signUpSubmitBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('signUpEmail').value;
+            const password = document.getElementById('signUpPassword').value;
+            const userType = document.getElementById('userType').value;
+            const errorEl = document.getElementById('signUpError');
+            errorEl.textContent = '';
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then(async (userCredential) => {
+                    const user = userCredential.user;
+                    // Create a user document in Firestore
+                    const userDocRef = doc(db, `artifacts/${appId}/users/${user.uid}/profile`, 'data');
+                    await setDoc(userDocRef, {
+                        email: user.email,
+                        uid: user.uid,
+                        userType: userType,
+                        createdAt: new Date()
+                    });
+                    console.log('User signed up and document created:', user.uid);
+                    closeModal();
+                })
+                .catch((error) => {
+                    console.error("Sign up error:", error);
+                    errorEl.textContent = error.message;
+                });
+        });
+
+        // Handle Sign In
+        const signInSubmitBtn = document.getElementById('signInSubmitBtn');
+        signInSubmitBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('signInEmail').value;
+            const password = document.getElementById('signInPassword').value;
+            const errorEl = document.getElementById('signInError');
+            errorEl.textContent = '';
+
+            signInWithEmailAndPassword(auth, email, password)
+                .then((userCredential) => {
+                    console.log('User signed in:', userCredential.user.uid);
+                    closeModal();
+                })
+                .catch((error) => {
+                    console.error("Sign in error:", error);
+                    errorEl.textContent = "Invalid email or password.";
+                });
+        });
+        
+        // Handle Sign Out
+        const handleSignOut = (e) => {
+            e.preventDefault();
+            signOut(auth).then(() => {
+                console.log('User signed out');
+            }).catch((error) => {
+                console.error('Sign out error:', error);
+            });
+        };
+        signOutBtnDesktop.addEventListener('click', handleSignOut);
+        signOutBtnMobile.addEventListener('click', handleSignOut);
+
+
+        // --- Auth State Management ---
+        const updateUIForLoggedInUser = (user) => {
+            // Desktop UI
+            authContainerDesktop.classList.add('hidden');
+            userInfoDesktop.classList.remove('hidden');
+            userInfoDesktop.classList.add('flex');
+            userEmailDesktop.textContent = user.email;
+
+            // Mobile UI
+            authContainerMobile.classList.add('hidden');
+            userInfoMobile.classList.remove('hidden');
+            userEmailMobile.textContent = user.email;
+        };
+
+        const updateUIForLoggedOutUser = () => {
+            // Desktop UI
+            authContainerDesktop.classList.remove('hidden');
+            userInfoDesktop.classList.add('hidden');
+            userInfoDesktop.classList.remove('flex');
+            userEmailDesktop.textContent = '';
+            
+            // Mobile UI
+            authContainerMobile.classList.remove('hidden');
+            userInfoMobile.classList.add('hidden');
+            userEmailMobile.textContent = '';
+        };
+
+        // Listen for auth state changes
+        onAuthStateChanged(auth, (user) => {
+            if (user) {
+                // User is signed in
+                updateUIForLoggedInUser(user);
+            } else {
+                // User is signed out
+                updateUIForLoggedOutUser();
+            }
+        });
+        
+        // Initial authentication check
+        (async () => {
+            try {
+                if (typeof __initial_auth_token !== 'undefined' && __initial_auth_token) {
+                    await signInWithCustomToken(auth, __initial_auth_token);
+                    console.log("Signed in with custom token.");
+                } else {
+                    await signInAnonymously(auth);
+                    console.log("Signed in anonymously.");
+                }
+            } catch (error) {
+                console.error("Initial authentication error:", error);
+            }
+        })();
+
+    </script>
+</body>
+</html>
